@@ -7,20 +7,20 @@ on:
     branches: ["main", "master"]
 
 
-  jobs: #Definimos los trabajos (Tareas automaticas)
-    pruebas: #Es solo el nombre de uno de los trabajos, se puede llamar como quiera
-      runs-on: ubuntu-latest #En que entorno virtual va a hacer las pruebas, lo comun es ubuntu
+jobs: #Definimos los trabajos (Tareas automaticas)
+  pruebas: #Es solo el nombre de uno de los trabajos, se puede llamar como quiera
+    runs-on: ubuntu-latest #En que entorno virtual va a hacer las pruebas, lo comun es ubuntu
 
-      steps: #Definimos los pasos de la tarea
-        - uses: action/checkout@v3 #Clona mi repo en el entorno de GitHub, es como un "git clone"
+    steps: #Definimos los pasos de la tarea
+      - uses: action/checkout@v3 #Clona mi repo en el entorno de GitHub, es como un "git clone"
 
-        - name: Configurar Node.js # name es el nombre del paso
-          uses: actions/setup-node@v3 #Es un comando de github predeterminado para instalar node
-          with: #Por si hay que entregar parametros
-            node-version: '18' #La version de node que vamos a usar
+      - name: Configurar Node.js # name es el nombre del paso
+        uses: actions/setup-node@v3 #Es un comando de github predeterminado para instalar node
+        with: #Por si hay que entregar parametros
+          node-version: '18' #La version de node que vamos a usar
 
-        - name: Instalar dependencias
-          run: npm install  #run Ejecuta un comando en consola
+      - name: Instalar dependencias
+        run: npm install  #run Ejecuta un comando en consola
 
-        - name: Ejecutar tests
-          run: npm test #Corremos los test con jest
+      - name: Ejecutar tests
+        run: npm test #Corremos los test con jest
