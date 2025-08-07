@@ -1,0 +1,24 @@
+# Ignorar node_modules (lo vuelve a instalar dentro del contenedor)
+node_modules
+
+# Ignorar logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Ignorar archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de control de versiones
+.git
+.gitignore
+
+# Ignorar archivos temporales de VSCode y otros editores
+.vscode
+*.swp
+*.swo
+
+# Ignorar archivos de entorno (por seguridad)
+.env
+.env.*
